@@ -24,10 +24,6 @@ function preload() {
   lk = loadImage("58.PNG");
   restartI = loadImage("r1.png");
   gameOverIm = loadImage("gameOver.png");
-  
-  coin = loadSound("coin.wav");
-  gOver = loadSound("gameover.mp3");
-  jump = loadSound("jump.wav");
 }
 
 function setup() {
@@ -95,7 +91,6 @@ function draw() {
   
   if((keyDown("space"))){
     player.velocityY = -6;
-    jump.play();
   }
    player.velocityY=player.velocityY+0.7;
   if(coinsGroup1.isTouching(player)){
@@ -106,7 +101,6 @@ function draw() {
   if(coinsGroup2.isTouching(player)){
     coinsGroup2.destroyEach();
     score=score+3;
-    coin.play();
   }
    
   if((gObs.isTouching(player))){
@@ -128,7 +122,6 @@ function draw() {
   }
   
   else if((gameState === END)){
-    gOver.play();
     scene.velocityX = 0;
     gameOver.visible = true;
     restart.visible=true;
