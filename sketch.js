@@ -130,6 +130,7 @@ function draw() {
     obstacleGroup.setVelocityXEach(0);
     coinsGroup1.setVelocityXEach(0);
     coinsGroup2.setVelocityXEach(0);
+    gObs.setVelocityXEach(0);
     
     if(mousePressedOver(restart)){
     reset();
